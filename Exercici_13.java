@@ -31,6 +31,7 @@ public class Exercici_13 {
                     || frase.charAt(i) == 'Ù') {
                 total++;
             }
+
             // Comprova si és una vocal, incloent-hi les majùscules i amb accents.
             // Per alguna raó no compta els accents.
         }
