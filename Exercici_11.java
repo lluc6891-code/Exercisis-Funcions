@@ -11,7 +11,7 @@ public class Exercici_11 {
             int numF3 = numF1 + numF2;
             numF1 = numF2;
             numF2 = numF3;
-            System.err.println(numF1 + " ");
+            System.out.println(numF1 + " ");
             i++;
         }
         return numF1;

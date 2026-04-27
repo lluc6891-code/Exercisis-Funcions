@@ -3,12 +3,7 @@ import java.util.Scanner;
 
 public class Exercici_13 {
 
-    @SuppressWarnings("ConvertToTryWithResources")
-    public static void main(String[] args) {
-        Scanner fraseScanner = new Scanner(System.in);
-        System.out.println("Introdueix una frase per coneixer quantes vocals té:");
-        String frase = fraseScanner.nextLine();
-        int total = 0;
+    public static int vocalsFrase(String frase, int total) {
         for (int i = 0; i < frase.length(); i++) {
             if (frase.charAt(i) == 'a'
                     || frase.charAt(i) == 'e'
@@ -35,10 +30,20 @@ public class Exercici_13 {
                     || frase.charAt(i) == 'Ò'
                     || frase.charAt(i) == 'Ù') {
                 total++;
-            } // Comprova si és una vocal, incloent-hi les majùscules i amb accents.
+            }
+            // Comprova si és una vocal, incloent-hi les majùscules i amb accents.
             // Per alguna raó no compta els accents.
         }
-        System.out.print("La frase té " + total + " vocals.");
+        return total;
+    }
+
+    @SuppressWarnings("ConvertToTryWithResources")
+    public static void main(String[] args) {
+        Scanner fraseScanner = new Scanner(System.in);
+        System.out.println("Introdueix una frase per coneixer quantes vocals té:");
+        String frase = fraseScanner.nextLine();
+        int total = 0;
+        System.out.print("La frase té " + vocalsFrase(frase, total) + " vocals.");
         fraseScanner.close();
     }
 }
