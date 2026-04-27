@@ -3,6 +3,20 @@ import java.util.Scanner;
 
 public class Exercici_11 {
 
+    public static int calcular(int numF1, int numF2, int i, int comptador) {
+        // Prepara el següent pas.
+        while (i < comptador) {
+
+            //  Prepara el següent pas.
+            int numF3 = numF1 + numF2;
+            numF1 = numF2;
+            numF2 = numF3;
+            System.err.println(numF1 + " ");
+            i++;
+        }
+        return numF1;
+    }
+
     @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         Scanner fibonacciScanner = new Scanner(System.in);
@@ -11,16 +25,10 @@ public class Exercici_11 {
         int i = 0;
         int numF1 = 0;
         int numF2 = 1;
-        while (i < comptador) {
-            // Mostrar el nombre de la successió
-            System.out.print(numF1 + " ");
 
-            // Prepara el següent pas.
-            int numF3 = numF2 + numF1;
-            numF1 = numF2;
-            numF2 = numF3;
-            i++;
-        }
+        System.out.print(calcular(numF1, numF2, i, comptador) + " ");
+
         fibonacciScanner.close();
+
     }
 }
