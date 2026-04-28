@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Exercici_14 {
 
     public static int verificacioDni(String LletresCorrectes, String dni, int resultat) {
-        if (dni.length() == 9) {
+        if (dni.length() == 8) {
             for (int i = 0; i < dni.length() - 1; i++) { // T R W A G M Y F P D X B N J Z S Q V H L C K E
                 if (dni.charAt(i) == '0'
                         || dni.charAt(i) == '1'
@@ -20,33 +20,33 @@ public class Exercici_14 {
                     System.out.println("Error! El text introduit no és un DNI. Ha de tenir 9 caràcters, 8 nombres i una lletra.");
                 }
             }
-            if (dni.charAt(9) == 'T'
-                    || dni.charAt(9) == 'R'
-                    || dni.charAt(9) == 'W'
-                    || dni.charAt(9) == 'A'
-                    || dni.charAt(9) == 'G'
-                    || dni.charAt(9) == 'M'
-                    || dni.charAt(9) == 'Y'
-                    || dni.charAt(9) == 'F'
-                    || dni.charAt(9) == 'P'
-                    || dni.charAt(9) == 'D'
-                    || dni.charAt(9) == 'X'
-                    || dni.charAt(9) == 'B'
-                    || dni.charAt(9) == 'N'
-                    || dni.charAt(9) == 'J'
-                    || dni.charAt(9) == 'Z'
-                    || dni.charAt(9) == 'S'
-                    || dni.charAt(9) == 'Q'
-                    || dni.charAt(9) == 'V'
-                    || dni.charAt(9) == 'H'
-                    || dni.charAt(9) == 'L'
-                    || dni.charAt(9) == 'C'
-                    || dni.charAt(9) == 'K'
-                    || dni.charAt(9) == 'E') {
-                String subdni = dni.substring(1, 8);
+            if (dni.charAt(8) == 'T'
+                    || dni.charAt(8) == 'R'
+                    || dni.charAt(8) == 'W'
+                    || dni.charAt(8) == 'A'
+                    || dni.charAt(8) == 'G'
+                    || dni.charAt(8) == 'M'
+                    || dni.charAt(8) == 'Y'
+                    || dni.charAt(8) == 'F'
+                    || dni.charAt(8) == 'P'
+                    || dni.charAt(8) == 'D'
+                    || dni.charAt(8) == 'X'
+                    || dni.charAt(8) == 'B'
+                    || dni.charAt(8) == 'N'
+                    || dni.charAt(8) == 'J'
+                    || dni.charAt(8) == 'Z'
+                    || dni.charAt(8) == 'S'
+                    || dni.charAt(8) == 'Q'
+                    || dni.charAt(8) == 'V'
+                    || dni.charAt(8) == 'H'
+                    || dni.charAt(8) == 'L'
+                    || dni.charAt(8) == 'C'
+                    || dni.charAt(8) == 'K'
+                    || dni.charAt(8) == 'E') {
+                String subdni = dni.substring(0, 7);
                 int valorDni = Integer.parseInt(subdni);
                 int lletra = valorDni % 23;
-                if (LletresCorrectes.charAt(lletra) == dni.charAt(9)) {
+                if (LletresCorrectes.charAt(lletra) == dni.charAt(8)) {
                     resultat = 1;
                 } else {
                     resultat = 0;
