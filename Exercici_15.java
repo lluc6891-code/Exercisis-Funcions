@@ -5,7 +5,7 @@ public class Exercici_15 {
     @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         Scanner fraseScanner = new Scanner(System.in);
-        System.out.println("Introdueix una frase per coneixer quantes vocals té:");
+        System.out.println("Introdueix una frase per veure si és un pangrama:");
         String frase = fraseScanner.nextLine().toUpperCase();
         int[] llista = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         // String Lletres = "ABCDEFGHIJKLMOPQRSTUVWXYZ";

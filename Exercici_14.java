@@ -3,16 +3,7 @@ import java.util.Scanner;
 
 public class Exercici_14 {
 
-    @SuppressWarnings("ConvertToTryWithResources")
-    public static void main(String[] args) {
-        // El último dígito (dígito de control) se calcula dividiendo el número del DNI
-        // entre 23.
-        // El resto de la división (operación normalmente conocida como módulo)
-        // indicará la letra que debe ocupar la posición 9 del string.
-        Scanner dniScanner = new Scanner(System.in);
-        System.out.println("Introdueix el DNI a validar:");
-        String LletresCorrectes = "TRWAGMYFPDXBNJZSQVHLCKE";
-        String dni = dniScanner.nextLine();
+    public static int verificacioDni(String LletresCorrectes, String dni, int resultat) {
         if (dni.length() == 9) {
             for (int i = 0; i < dni.length() - 1; i++) { // T R W A G M Y F P D X B N J Z S Q V H L C K E
                 if (dni.charAt(i) == '0'
@@ -56,15 +47,38 @@ public class Exercici_14 {
                 int valorDni = Integer.parseInt(subdni);
                 int lletra = valorDni % 23;
                 if (LletresCorrectes.charAt(lletra) == dni.charAt(9)) {
-                    System.out.println("El DNI és correcte!");
+                    resultat = 1;
                 } else {
-                    System.out.println("Error! La lletra no coincideix!");
+                    resultat = 0;
                 }
             }
 
         } else {
-            System.out.println("Error! El darrer caràcter no és una lletra!");
+            resultat = 0;
         }
+        return resultat;
+    }
+
+    @SuppressWarnings("ConvertToTryWithResources")
+    public static void main(String[] args) {
+        // El último dígito (dígito de control) se calcula dividiendo el número del DNI
+        // entre 23.
+        // El resto de la división (operación normalmente conocida como módulo)
+        // indicará la letra que debe ocupar la posición 9 del string.
+        Scanner dniScanner = new Scanner(System.in);
+        System.out.println("Introdueix el DNI a validar:");
+        String LletresCorrectes = "TRWAGMYFPDXBNJZSQVHLCKE";
+        String dni = dniScanner.nextLine();
+        int resultat = 0;
+
         dniScanner.close();
+
+        switch (verificacioDni(LletresCorrectes, dni, resultat)) {
+            case 1:
+                System.out.println("El DNI és correcte!");
+                break;
+            default:
+                System.err.println("Error! El DNI no és correcte! Un DNI és una combinació de 8 nombres i una lletra. Per favor, intenta-ho una altra vegada.");
+        }
     }
 }
