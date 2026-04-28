@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Exercici_14 {
 
     public static int verificacioDni(String LletresCorrectes, String dni, int resultat) {
-        if (dni.length() == 8) {
+        if (dni.length() == 9) {
             for (int i = 0; i < dni.length() - 1; i++) { // T R W A G M Y F P D X B N J Z S Q V H L C K E
                 if (dni.charAt(i) == '0'
                         || dni.charAt(i) == '1'
